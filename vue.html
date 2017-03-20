@@ -19,8 +19,13 @@
 
 
 <div id="app" v-bind:title="msg_title">
-
 {{ message }}
+</div>
+
+<div id="app3">
+	<p v-if="seen">
+	you see me
+	</p>
 </div>
 
 <script>
@@ -31,6 +36,15 @@ var app = new Vue({
 		msg_title:'page loading time: ' + new Date(),
 	}
 })
+
+var app3 = new Vue({
+  el:'#app3',
+  data:{ seen: true }
+
+
+})
+app3.seen = false;
+
 </script>
 	
 </body>
